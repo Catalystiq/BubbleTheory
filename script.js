@@ -1,16 +1,16 @@
-document.body.style.margin = "0";
-document.body.style.padding = "0";
+//document.body.style.margin = "0";
+//document.body.style.padding = "0";
 let size = 1000
 let bubbles = new Array(size)
-let length = 2000
-let width = 2000
+let width = window.innerWidth
+let height = window.innerHeight
 let upperRadius = 0.1
 let lowerRadius = 0.1
 let move = 1
 
 function setup() {
-  createCanvas(length, width)
-  bubbles = bubbles.fill().map(() => new Bubble(random(length), random(width), random(lowerRadius, upperRadius), length, width, '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0'), move))
+  createCanvas(width, height)
+  bubbles = bubbles.fill().map(() => new Bubble(random(width), random(height), random(lowerRadius, upperRadius), width, height, '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0'), move))
 }
 
 function draw() {
